@@ -1,0 +1,16 @@
+// Prisoner
+printf("Initialise");
+
+Block
+{
+    Frame PrisonerSit;  FRM_FindFrame(PrisonerSit,"PrisonerSit");
+    Frame myframe; 	FRM_GetMyFrame(myframe);
+
+    HUMAN_SetOptimized(2);
+    //FRM_SetOn(treb, false);
+    HUMAN_ACTIVITY_Sit(PrisonerSit);
+    HUMAN_SetAnim("%%mlacenej", 100,100, true);
+}
+
+HUMAN_ACTIVITY_Sit(PrisonerSit);
+HUMAN_SetAnim("%%mlacenej", 100,100, true);
