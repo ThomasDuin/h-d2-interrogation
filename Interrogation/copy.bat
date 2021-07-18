@@ -1,0 +1,2 @@
+xcopy /s /Y "F:\Hidden and Dangerous 2\MISSIONS\Interrogation" "F:\Hidden and Dangerous 2\MISSIONS\Africa2"
+xcopy /s /Y "F:\Hidden and Dangerous 2\SCRIPTS\Interrogation" "F:\Hidden and Dangerous 2\SCRIPTS\Africa2"

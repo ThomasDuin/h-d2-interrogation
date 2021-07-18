@@ -1,0 +1,32 @@
+Printf("CutsceneManager Initialised3");
+
+Frame Camera1;		FRM_FindFrame(Camera1, "Camera1");
+Frame Camera1See;		FRM_FindFrame(Camera1See, "Camera1See");
+Frame null;		FRM_FindFrame(null, ""); 
+
+//EndScript();
+Delay(5000);
+CSC_FadeOut(1); 
+CSC_RunCutscene(1);
+
+OnCutscene(1) 
+{ 
+    
+    CSC_FadeIn(250);
+    // FRM_SetCameraFrame(Camera1See);
+    FRM_SetActiveCamera(Camera1);
+    FRM_WatchTrack(Camera1, "Behind2");
+    
+    Delay(50000);
+    CSC_EndCutscene(); 
+}
+
+OnCutsceneDone(1) 
+{ 
+    FRM_SetCameraFrame(null);
+    CSC_FadeIn(250); 
+}
+
+// Did not know there is a cloud function, cool!
+// CSC_RunCLouder(true);
+// CSC_SetCameraAnimation(Camera1, "#CamB2C1");

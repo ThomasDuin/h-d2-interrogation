@@ -1,0 +1,19 @@
+// Inspector
+printf("Initialise Inspector");
+
+Block {
+    FRAME prisoner; FRM_FindFrame(prisoner, "CI10");
+}
+
+//Delay(5000);
+//printf("I should start walking");
+//goto START;
+    
+/Label START:
+//    printf("At start");
+//    Human_Move("Friedrich1");
+//    Human_Move("Friedrich2");
+ //   Human_Move("Friedrich3");
+ //   Human_Move("Friedrich4");
+ //   Human_Move("Friedrich5");
+//    HUMAN_TurnAt(prisoner);

@@ -1,0 +1,11 @@
+// Friedrich
+printf("Initialise Friedrich");
+
+Block
+{
+    Frame FriedrichSit;  FRM_FindFrame(FriedrichSit, "FriedrichSit");
+    Frame myFrame; 	FRM_GetMyFrame(myFrame);
+
+    HUMAN_SetOptimized(2);    
+    HUMAN_ACTIVITY_Sit(FriedrichSit);
+}
