@@ -5,7 +5,19 @@ Block
 {
     Frame FriedrichSit;  FRM_FindFrame(FriedrichSit, "FriedrichSit");
     Frame myFrame; 	FRM_GetMyFrame(myFrame);
+    FRAME prisoner; FRM_FindFrame(prisoner, "CI10");
 
     HUMAN_SetOptimized(2);    
-    HUMAN_ACTIVITY_Sit(FriedrichSit);
+    //HUMAN_ACTIVITY_Sit(FriedrichSit);
+}
+
+OnCutscene(1) {
+    Delay(53000);
+
+    // Jawohl
+    FRM_MorphSpeechDelayed(myFrame, 100000007, 3, 20);
+    Delay(1000);
+    Human_Move("Watch");
+    HUMAN_TurnAt(prisoner);
+    CSC_FadeOut(2000); 
 }

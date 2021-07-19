@@ -1,7 +1,9 @@
 Printf("CutsceneManager Initialised3");
 
 Frame Camera1;		FRM_FindFrame(Camera1, "Camera1");
-Frame Camera1See;		FRM_FindFrame(Camera1See, "Camera1See");
+Frame Camera2;		FRM_FindFrame(Camera2, "Camera2");
+Frame Camera3;		FRM_FindFrame(Camera3, "Camera3");
+
 Frame null;		FRM_FindFrame(null, ""); 
 
 //EndScript();
@@ -9,16 +11,19 @@ Delay(5000);
 CSC_FadeOut(1); 
 CSC_RunCutscene(1);
 
-OnCutscene(1) 
-{ 
-    
-    CSC_FadeIn(250);
-    // FRM_SetCameraFrame(Camera1See);
+OnCutscene(1) {     
+    CSC_FadeIn(1000);
     FRM_SetActiveCamera(Camera1);
-    FRM_WatchTrack(Camera1, "Behind2");
+    FRM_WatchTrack(Camera1, "Behind3");
+    Delay(10000);    
+ FRM_SetActiveCamera(Camera2);
+    Delay(5000);
+    FRM_SetActiveCamera(Camera3);
+    Delay(5000);
     
     Delay(50000);
-    CSC_EndCutscene(); 
+    Printf("Cutscene finished!!");
+    CSC_EndCutscene();
 }
 
 OnCutsceneDone(1) 

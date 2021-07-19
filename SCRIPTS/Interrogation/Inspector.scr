@@ -1,5 +1,8 @@
 // Inspector
 printf("Initialise Inspector");
+Frame Inspector;		FRM_GetMyFrame(Inspector);
+Frame Camera4;		FRM_FindFrame(Camera4, "Camera4");
+Frame Camera5;		FRM_FindFrame(Camera5, "Camera5");
 
 Block {
     FRAME prisoner; FRM_FindFrame(prisoner, "CI10");
@@ -9,7 +12,7 @@ Block {
 //printf("I should start walking");
 //goto START;
     
-/Label START:
+//Label START:
 //    printf("At start");
 //    Human_Move("Friedrich1");
 //    Human_Move("Friedrich2");
@@ -17,3 +20,54 @@ Block {
  //   Human_Move("Friedrich4");
  //   Human_Move("Friedrich5");
 //    HUMAN_TurnAt(prisoner);
+
+OnCutscene(1) {
+    Printf("Inspector on cutscene 1");
+    Delay(3000);
+    FRM_MorphSpeechDelayed(Inspector, 100000001, 3, 20);
+    Delay(3000);
+    Human_Move("Friedrich2");
+    Human_Move("Friedrich5");
+    HUMAN_TurnAt(prisoner);
+    Delay(1000);
+
+    // Where is the secret facility
+    FRM_MorphSpeechDelayed(Inspector, 100000002, 3, 20);
+
+    // Walk to torture stuff
+    Delay(5000);
+    Human_Move("Friedrich6");
+
+    // Hell?
+    FRM_MorphSpeechDelayed(Inspector, 100000004, 3, 20);
+    Delay(1000);
+
+    HUMAN_TurnAt(prisoner);
+    Delay(2000);
+
+    // I think you will burn in hell first
+    FRM_MorphSpeechDelayed(Inspector, 100000005, 3, 20);
+    HUMAN_WeaponOnArm(True);
+    FRM_SetActiveCamera(Camera4);
+    HUMAN_IllFire(prisoner, 1);
+    Delay(3000);
+    CSC_FadeOut(1);
+    FRM_SetActiveCamera(Camera5);
+    Delay(5000);
+    CSC_FadeIn(1000);
+
+    HUMAN_WeaponOnArm(1);
+    Delay(1000);
+
+    Human_Move("Friedrich10");
+    Human_Move("Friedrich2");
+
+    // Clean up this mess Friedrich!
+    FRM_MorphSpeechDelayed(Inspector, 100000006, 3, 20);
+    Delay(1000);
+    Human_Move("Friedrich8");
+}
+
+OnCutscene(1) {
+   
+}
